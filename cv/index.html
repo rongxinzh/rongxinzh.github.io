@@ -23,6 +23,29 @@
     
         <link rel="icon" type="image/ico" href="https://rongxinzhang.top/logo.ico">
     
+
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="js/sortable.min.css">
+    <script type="text/javascript" src="js/sortable.min.js"></script>
+    
+
+    
+    <link rel="stylesheet" href="css/lightbox.min.css">
+    <link rel="stylesheet" href="js/lightbox.min.js">
+    <script type="text/javascript" src="js/lightbox-plus-jquery.min.js"></script>
+    
+
+    
+    <script type="text/javascript" src="js/pdfobject.min.js"></script>
+    
+
+    
+    <script type="text/javascript" src="js/all.min.js"></script>
+    <script type="text/javascript" src="js/fontawesome.min.js"></script>
+    
+
+
 </head>
 
     <body><div class="container mt-5">
@@ -42,12 +65,17 @@
                         <span class="nav-item navbar-text mx-1">/</span>
                     
                 
-                    <a class="nav-item nav-link" href="/contact">Contact</a>
+                    <a class="nav-item nav-link" href="/gallery">Gallery</a>
                     
                         <span class="nav-item navbar-text mx-1">/</span>
                     
                 
                     <a class="nav-item nav-link" href="/cv">CV</a>
+                    
+                        <span class="nav-item navbar-text mx-1">/</span>
+                    
+                
+                    <a class="nav-item nav-link" href="/contact">Contact</a>
                     
                 
             
@@ -62,15 +90,22 @@
 </blockquote>
 <h2 id="my-cv-continuously-updated-version">My CV (Continuously updated version)</h2>
 <p><a href="https://rongxinzhang.top/rongxinzhang.pdf">CV pdf 📁 Please click here 📥 to download the Full version</a></p>
-<p>Last updated on November 18, 2020</p>
+<div id="mycv"></div>
+<script>PDFObject.embed("rongxinzhang.pdf", "#mycv");</script>
+<style>
+.pdfobject-container { height: 35rem; border: 1rem solid rgba(0,0,0,.1); }
+</style>
+<br/>
+Last updated on November 18, 2020
 
 </div>
 
         </div>
     <div id="footer">
         <hr>
-        <div class="container text-center mb-2"> <img src="seu_logo.jpg", width = 20%>&nbsp;&nbsp;&nbsp;<img src="bme_seu.png", width = 40%>&nbsp;&nbsp;&nbsp;<img src="sklb_seu.png", width = 29%> <hr>
-            Driven by <a href="https://gohugo.io/">Hugo</a> | Theme: <a href="https://github.com/ojroques/hugo-researcher">researcher</a> | Copyright © 2020 <a href="https://rongxinzhang.top/./">Rongxin Zhang</a> All Rights Reserved.
+        <div class="container text-center mb-2"> <a class="example-image-link" href="seu_logo.jpg" data-lightbox="example-1"><img src="seu_logo.jpg", width = 20%></a>&nbsp;&nbsp;&nbsp;<a class="example-image-link" href="bme_seu.png" data-lightbox="example-1"><img src="bme_seu.png", width = 40%></a>&nbsp;&nbsp;&nbsp;<a class="example-image-link" href="sklb_seu.png" data-lightbox="example-1"><img src="sklb_seu.png", width = 29%></a> <hr>
+        <a href = "https://rongxinzhang.top/oi/">Open Information</a><br/>
+        Copyright © 2020 <a href="https://rongxinzhang.top/./">Rongxin Zhang</a> All Rights Reserved.
         </div>
     </div>
 
