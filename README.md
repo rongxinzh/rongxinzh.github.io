@@ -1,2 +1,1 @@
-### Hi there, welcome to my page! 😄
-### Driven by Hugo | Theme: Researcher
+### Hi there, welcome to my personal page.
