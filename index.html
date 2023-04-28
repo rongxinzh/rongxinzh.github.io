@@ -25,6 +25,10 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/publications.css">
 
+    <link type="text/css" rel="stylesheet" href="./assets/css/myukitoast.css"/>
+    <script type="text/javascript" src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="./assets/js/myukitoast.js"></script>
+
     <script>
     var _hmt = _hmt || [];
     (function() {
@@ -35,8 +39,36 @@
     })();
     </script>
 
+    <script>
+  $(document).ready(function(){
+
+    let toastObj = $MT(
+      "#toastDemo", 
+      {
+        "z_index": 9999, 
+        "position": 'center',
+        "width": '30%',
+        "top": "32px",
+        "type": 'info',
+        "message": 'Hi, welcome to visit my page 😊',
+        "dismissible": true, 
+        "animation": 'normal-shake', 
+        "maxExist": 10, 
+        "autoHide": true,
+        "autoHideAnimation": 'originFade',
+        "originFadeDuration": 800,
+        "autoHideDelay": 5000,
+      }
+    );
+    toastObj.toast();
+
+  })
+</script>
+
   </head>
   <body>
+    <div id="toastDemo">
+    </div>
     <div class="wrapper">
       <header>
         
