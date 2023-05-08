@@ -137,13 +137,14 @@ header ul li + li + li { border-right: none; width: 89px; }
 
 header ul a strong { font-size: 14px; display: block; color: #222; }
 
-section { width: 650px; float: right; padding-top: 4.0em; padding-bottom: 30px; }
+section { width: 650px; float: right; padding-top: 4.0em; padding-bottom: 16px; }
 
 small { font-size: 11px; }
 
 hr { border: 0; background: #e5e5e5; height: 1px; margin: 0 0 20px; }
 
-footer { width: 232px; float: left; position: fixed; bottom: 30px; -webkit-font-smoothing: subpixel-antialiased; text-align: center; }
+footer { width: 232px; float: left; position: fixed; bottom: 16px; -webkit-font-smoothing: subpixel-antialiased; text-align: center; }
+
 
 @media print, screen and (max-width: 960px) { .pub-row { display: flex; align-items: center; }
   div.wrapper { width: auto; margin: 0; }
