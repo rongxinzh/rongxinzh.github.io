@@ -18,7 +18,8 @@
     <link rel="icon" media="(prefers-color-scheme:dark)" href="./assets/img/favicon.png" type="./image/png" />
     <link rel="icon" media="(prefers-color-scheme:light)" href="./assets/img/favicon.png" type="./image/png" />
     <script src="./assets/js/favicon-switcher.js" type="application/javascript"></script>
-    <script src="./assets/js/jquery-3.6.0.min.js" type="application/javascript"></script>
+    <!--<script src="./assets/js/jquery-3.6.0.min.js" type="application/javascript"></script>-->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="./assets/js/scroll.js" type="application/javascript"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
@@ -37,9 +38,6 @@
     <link rel="stylesheet" href="./assets/css/ticker.css">
     <script src="./assets/js/ticker.js" type="application/javascript"></script>
 
-    <link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.css" rel="stylesheet"/>
-    <script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
-
     <script>
     var _hmt = _hmt || [];
     (function() {
@@ -55,7 +53,7 @@
     <div class="wrapper">
       <header>
         
-        <a class="image avatar"><img src="./assets/img/zhang.jpeg" alt="avatar" /></a>
+        <a class="image avatar"><img src="./assets/img/zhang.jpg" alt="avatar" /></a>
         
         <h1>Rongxin Zhang</h1>
         
@@ -107,10 +105,7 @@
           <li><span>Hello everyone, welcome to my personal webpage!</span></li>
         </div>
         <div>
-          <li><span>Latest news - <a>None</a></span></li>
-        </div>
-        <div>
-          <li><span>Upcoming events: LoB seminar. <a href="https://portail.polytechnique.edu/lob/en/lob-seminar-title-be-announced" target="_blank">  >>> Click here to see the details</a></span></li>
+          <li><span>Upcoming seminar:&nbsp;&nbsp;<i class="fa-regular fa-hand-point-right"></i>&nbsp;&nbsp;<a href="https://portail.polytechnique.edu/lob/en/lob-seminar-title-be-announced" target="_blank"> Click here to see the details</a></span></li>
         </div>
         </ul>
       </div>
@@ -128,7 +123,7 @@
       <p><strong>Ph.D. candidate</strong>&nbsp;&nbsp;&nbsp;Fall 2018 - Present&nbsp;&nbsp;&nbsp;Supervised by Prof. <strong><a href="https://bme.seu.edu.cn/2011/1017/c463a12287/page.htm" target="_blank">Xiao Sun</a></strong><br/>Deapartment of Bioinformatics, Southeast Univeristy, China</p>
       <p><strong>B.S.</strong>&nbsp;&nbsp;&nbsp;Fall 2014 - Fall 2018&nbsp;&nbsp;&nbsp;Supervised by Prof. <strong><a href="https://scholar.google.com/citations?user=mKlyTK8AAAAJ&hl=en" target="_blank">Qianghu Wang</a></strong><br/>Deapartment of Bioinformatics, Nanjing Medical Univeristy, China</p>
 -->
-      <table id="education_table" class="display" style="width:100%">
+      <table class="wide-tables">
         <thead><tr>
           <th>Attained Degree / Status</th>
           <th>Duration of Study</th>
@@ -140,22 +135,27 @@
           <td>Visiting Ph.D.</td>
           <td>Fall 2022 - Present</td>
           <td><strong><a href="https://www.ae-info.org/ae/Member/Mergny_Jean-Louis" target="_blank">Jean-Louis Mergny</a></strong></td>
-          <td>Laboratory of Optics and Biosciences<br/>Ecole Polytechnique <span class="fi fi-fr"></span></td>
+          <td>Laboratory of Optics and Biosciences, Ecole Polytechnique, Palaiseau&nbsp;&nbsp;&nbsp;<span class="fi fi-fr"></span></td>
         </tr>
         <tr>
           <td>Ph.D. candidate</td>
           <td>Fall 2018 - Present</td>
           <td><strong><a href="https://bme.seu.edu.cn/2011/1017/c463a12287/page.htm" target="_blank">Xiao Sun</a></strong></td>
-          <td>Deapartment of Bioinformatics<br/>Southeast Univeristy <span class="fi fi-cn"></span></td>
+          <td>Deapartment of Bioinformatics, Southeast Univeristy, Nanjing&nbsp;&nbsp;&nbsp;<span class="fi fi-cn"></span></td>
         </tr>
         <tr>
           <td>B.S.</td>
           <td>Fall 2014 - Fall 2018</td>
           <td><strong><a href="https://scholar.google.com/citations?user=mKlyTK8AAAAJ&hl=en" target="_blank">Qianghu Wang</a></strong></td>
-          <td>Deapartment of Bioinformatics<br/>Nanjing Medical Univeristy <span class="fi fi-cn"></span></td>
+          <td>Deapartment of Bioinformatics, Nanjing Medical Univeristy, Nanjing&nbsp;&nbsp;&nbsp;<span class="fi fi-cn"></span></td>
         </tr>
       </tbody>
       </table>
+
+      <script src="./assets/js/makeTableResponsive.js"></script>
+      <script>
+        $('.wide-tables').makeTableResponsive({"breakpoint":"600px",});
+      </script>
 
       <h2 id="research-interests">Research Interests</h2>
 
@@ -395,19 +395,9 @@
       </div>
 
     </div>
-    <script src="/assets/js/scale.fix.js"></script>
+    <script src="./assets/js/scale.fix.js"></script>
 
-    <script>
-    $(document).ready(function () {
-      $('#education_table').DataTable({
-        paging: false,
-        ordering: false,
-        info: false,
-        searching: false;
-        responsive: true;
-      });
-    });
-    </script>
+
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-175669535-1"></script>
