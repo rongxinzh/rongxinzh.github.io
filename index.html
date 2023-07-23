@@ -35,8 +35,27 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/vaakash/socializer@2f749eb/css/socializer.min.css">
 
-    <link rel="stylesheet" href="./assets/css/ticker.css">
-    <script src="./assets/js/ticker.js" type="application/javascript"></script>
+    <script src="./assets/js/infiniteslidev2.min.js" type="application/javascript"></script>
+    <style type="text/css">
+      .noticeboard {
+        display: none;
+      }
+      .noticeboard>* {
+        background: #eee;
+        padding: 6px;
+      }
+      .noticeboard>*:nth-child(even) {
+        background: #ddd;
+      }
+    </style>
+
+    <script type="text/javascript">
+      $(function(){
+        $('.noticeboard').infiniteslide({
+          speed: 60
+        });
+      });
+    </script>
 
   </head>
   <body>
@@ -88,19 +107,10 @@
       
       <p><blockquote>The greatest truths are the simplest.</blockquote></p>
 
-      <div class="ticker-container">
-        <div class="ticker-caption">
-          <p> Notice Dashboard <i class="fa-solid fa-bullhorn"></i>
-        </div>
-        <ul>
-        <div>
-          <li><span>Hello everyone, welcome to my personal webpage! &nbsp;&nbsp;<i class="fa-solid fa-dna"></i></span></li>
-        </div>
-        <div>
-          <li><span>Upcoming: <b>International Symposium on Human Genomics</b>.<a href="https://www.insb.cnrs.fr/fr/evenement/international-symposium-human-genomics" target="_blank">&nbsp;&nbsp;<i class="fa-solid fa-link fa-beat-fade"></i></a></span></li>
-        </div>
-        </ul>
-      </div>
+      <ul class="noticeboard">
+        <li>Hello everyone, welcome to my personal webpage! &nbsp;&nbsp;<i class="fa-solid fa-dna"></i></li>
+        <li>Upcoming conference: <b>International Symposium on Human Genomics</b>.<a href="https://www.insb.cnrs.fr/fr/evenement/international-symposium-human-genomics" target="_blank">&nbsp;&nbsp;Link&nbsp;<i class="fa-solid fa-link"></i></a></li>
+      </ul>
 
       <h2 id="about-me">About Me</h2>
 
