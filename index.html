@@ -445,9 +445,11 @@
       <h3>Keep in touch with me</h3>
       <div class="socializer" data-features="32px,float,fluid,icon-white,sw-2,pad" data-sites="twitter,email" data-meta-twitter="https://twitter.com/Rongxin_Zhang" data-meta-email="mailto:rongxinzhang@seu.edu.cn" data-text="in"></div>
 
-      <p>Website theme: <a href="https://github.com/yaoyao-liu/minimal-light" target="_blank">Minimal Light theme</a>.<br/>
+      <p>
+      Website theme: <a href="https://github.com/yaoyao-liu/minimal-light" target="_blank">Minimal Light theme</a>.<br/>
       Website maintained by Rongxin.<br/>
-      Copyright&copy;2022-<script>document.write(new Date().getFullYear());</script> Rongxin Zhang All Rights Reserved.</p>
+      Copyright &copy;2022-<span id="year"></span> Rongxin Zhang All Rights Reserved.
+      </p>
 
       </section>
 
@@ -470,6 +472,10 @@
 
     </div>
     <script src="./assets/js/scale.fix.js"></script>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 
     <script src="https://cdn.jsdelivr.net/gh/vaakash/socializer@2f749eb/js/socializer.min.js"></script>
     <script>
