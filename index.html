@@ -441,7 +441,11 @@
       </section>
 
       <footer>
+        <p>Last Modified: <span id="lastModified"></span></p>
+
+        <!--
         <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/rongxinzh/rongxinzh.github.io?color=%23774898&label=Last%20updated" style="margin:0 0 20px; display: block;"/>
+        -->
         <!--
         <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5o8i794tmx7&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33&amp;s=170" async="async"></script>
         -->
@@ -462,6 +466,15 @@
 
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const lastModified = new Date(document.lastModified);
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const formattedDate = lastModified.toLocaleDateString('en-US', options);
+        document.getElementById("lastModified").textContent = formattedDate;
+      });
     </script>
 
     <script type="text/javascript">
