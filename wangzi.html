@@ -77,10 +77,100 @@
       }
     }
 
+    .timeline-container {
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 15px #00ffe188;
+      text-align: center;
+    }
+
+    .timeline-title {
+      font-size: 1.6em;
+      color: #00ffe1;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px #00ffe1;
+    }
+
+    .timeline {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+    }
+
+    .timeline li {
+      font-size: 1.1em;
+      padding: 10px 0;
+      padding-left: 25px;
+      position: relative;
+      color: #ccc;
+    }
+
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #888;
+      box-shadow: 0 0 5px #888;
+    }
+
+    .timeline li.done {
+      color: #00ffae;
+    }
+
+    .timeline li.done::before {
+      background: #00ffae;
+      box-shadow: 0 0 10px #00ffae;
+    }
+
+    .timeline li.doing {
+      color: #fffb82;
+      font-weight: bold;
+    }
+
+    .timeline li.doing::before {
+      background: #fffb82;
+      box-shadow: 0 0 10px #fffb82;
+    }
+
+    .timeline li.pending {
+      color: #888;
+    }
+
+    .timeline li.pending::before {
+      background: #555;
+    }
+
+    .ad-banner {
+      margin: 40px auto;
+      padding: 15px 25px;
+      text-align: center;
+      font-size: 1.1em;
+      border: 1px dashed #ff66ff;
+      border-radius: 12px;
+      max-width: 700px;
+      color: #ffccff;
+      background: rgba(255, 0, 255, 0.05);
+      animation: glow-ad 2s infinite;
+    }
+
+    @keyframes glow-ad {
+      0% { box-shadow: 0 0 5px #ff66ff; }
+      50% { box-shadow: 0 0 20px #ff66ffaa; }
+      100% { box-shadow: 0 0 5px #ff66ff; }
+    }
+
     .footer {
       text-align: center;
       font-size: 0.9em;
-      margin-bottom: 40px;
+      margin: 40px auto;
       color: #888;
     }
 
@@ -97,16 +187,31 @@
   <div class="card-container">
     <div class="card">
       <div class="subject">语文</div>
-      <div class="score">92</div>
+      <div class="score">待公布</div>
     </div>
     <div class="card">
       <div class="subject">数学</div>
-      <div class="score">98</div>
+      <div class="score">待公布</div>
     </div>
     <div class="card">
       <div class="subject">英语</div>
-      <div class="score">95</div>
+      <div class="score">待公布</div>
     </div>
+  </div>
+
+  <div class="timeline-container">
+    <h2 class="timeline-title">🕓 成绩进度追踪</h2>
+    <ul class="timeline">
+      <li class="done">✅ 考试已结束</li>
+      <li class="done">✅ 海门区教育局阅卷完成</li>
+      <li class="doing">⏳ 正在统计成绩中</li>
+      <li class="pending">📢 即将发布成绩</li>
+    </ul>
+  </div>
+
+  <div class="ad-banner">
+    🎯 <strong>猜老师暑期英语补习班</strong> 正在火热招生！<br/>
+    请通过 <span class="highlight">微信联系</span> 报名，名额有限，先到先得！
   </div>
 
   <div class="footer">
