@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>东灶港小学 · 季逸轩同学期末成绩发布会</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(circle at center, #000000, #111111);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .glow-title {
+      text-align: center;
+      font-size: 2.8em;
+      margin-top: 60px;
+      color: #00ffe1;
+      text-shadow: 0 0 15px #00ffe1, 0 0 30px #00e1ff;
+      animation: pulse 2.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { text-shadow: 0 0 15px #00ffe1; }
+      50% { text-shadow: 0 0 30px #00ffe1; }
+      100% { text-shadow: 0 0 15px #00ffe1; }
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 50px auto;
+      max-width: 1000px;
+    }
+
+    .card {
+      background: linear-gradient(135deg, #1f1f1f 0%, #292929 100%);
+      border: 1px solid #00ffe1;
+      border-radius: 20px;
+      padding: 30px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 0 20px #00ffe1aa;
+      transition: transform 0.5s ease, box-shadow 0.3s ease;
+      animation: fly-in 1s ease forwards;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px #00ffe1;
+    }
+
+    .subject {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #f9f871;
+    }
+
+    .score {
+      font-size: 2.2em;
+      color: #00ffe1;
+    }
+
+    @keyframes fly-in {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.9em;
+      margin-bottom: 40px;
+      color: #888;
+    }
+
+    .highlight {
+      color: #ff66ff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="glow-title">🎓 东灶港小学 · 季逸轩同学期末成绩发布会 🎉</h1>
+
+  <div class="card-container">
+    <div class="card">
+      <div class="subject">语文</div>
+      <div class="score">92</div>
+    </div>
+    <div class="card">
+      <div class="subject">数学</div>
+      <div class="score">98</div>
+    </div>
+    <div class="card">
+      <div class="subject">英语</div>
+      <div class="score">95</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    本次成绩由 <span class="highlight">东灶港小学</span> 官方出品 · 致敬努力的少年<br/>
+    情报由东灶港小学猜老师独家提供
+  </div>
+
+</body>
+</html>
