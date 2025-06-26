@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>东灶港小学 · 季逸轩同学期末成绩发布会</title>
+  <title>港新区实验小学 · 季逸轩同学期末成绩发布会</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -12,6 +12,72 @@
       background: radial-gradient(circle at center, #000000, #111111);
       color: #fff;
       overflow-x: hidden;
+      padding-top: 50px; /* 避免被顶部广告条遮挡 */
+    }
+
+    /* 顶部澳门风广告条 */
+    .casino-banner {
+      background: linear-gradient(90deg, #ff00cc, #ffcc00, #00ffff, #ff00cc);
+      background-size: 600% 100%;
+      animation: banner-bg-move 10s linear infinite;
+      padding: 12px 0;
+      text-align: center;
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #fff700;
+      text-shadow: 0 0 5px #ff0000, 0 0 10px #ff00cc, 0 0 15px #ffff00;
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 9999;
+      border-bottom: 2px solid #ff00cc;
+      box-shadow: 0 0 15px #ff00cc;
+    }
+
+    .scroll-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-text 15s linear infinite;
+      white-space: nowrap;
+    }
+
+    /* 猜老师文字高亮发光 */
+    .highlight-teacher {
+  color: #ffb84d; /* 柔和暖金橙 */
+  font-weight: 900;
+  text-shadow:
+    0 0 6px #cc8400,
+    0 0 12px #d98e00,
+    0 0 18px #e0a800;
+  animation: teacher-glow 3s ease-in-out infinite alternate;
+  font-size: 1.15em;
+}
+
+@keyframes teacher-glow {
+  0% {
+    text-shadow:
+      0 0 4px #cc8400,
+      0 0 8px #d98e00,
+      0 0 14px #e0a800;
+  }
+  100% {
+    text-shadow:
+      0 0 10px #ffb84d,
+      0 0 20px #ffb84d,
+      0 0 30px #ffb84d;
+  }
+}
+
+
+    @keyframes banner-bg-move {
+      0% { background-position: 0% 0; }
+      100% { background-position: 100% 0; }
+    }
+
+    @keyframes scroll-text {
+      0%   { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
     }
 
     .glow-title {
@@ -182,7 +248,16 @@
 </head>
 <body>
 
-  <h1 class="glow-title">🎓 东灶港小学 · 季逸轩同学期末成绩发布会 🎉</h1>
+  <!-- 顶部澳门风广告 -->
+  <div class="casino-banner">
+    <span class="scroll-text">
+      🔥🔥 港新区实验小学名师，江苏省特级教师，国家级英语同声传译
+      <b>猜老师（崔洁老师）</b>
+      暑期补习班 · 英语数学双科连报立减188元！ 江苏省南通市海门区鲜海大队 🔥🔥
+    </span>
+  </div>
+
+  <h1 class="glow-title">🎓 港新区实验小学 · 季逸轩同学期末成绩发布会 🎉</h1>
 
   <div class="card-container">
     <div class="card">
@@ -215,8 +290,8 @@
   </div>
 
   <div class="footer">
-    本次成绩由 <span class="highlight">东灶港小学</span> 官方出品 · 致敬努力的少年<br/>
-    情报由东灶港小学猜老师独家提供
+    本次成绩由 <span class="highlight">港新区实验小学</span> 官方出品 · 致敬努力的少年<br/>
+    情报由港新区实验小学<span class="highlight">猜老师</span>独家提供
   </div>
 
 </body>
