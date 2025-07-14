@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,6 +36,21 @@
     }
 
     a:hover {
+      text-decoration: none;
+    }
+    
+    .intro a,
+    .education-card a,
+    .news-item a {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease;
+    }
+
+    .intro a:hover,
+    .education-card a:hover,
+    .news-item a:hover {
       text-decoration: none;
     }
 
@@ -377,6 +391,11 @@
       header h1 {
         font-size: 2.2rem;
       }
+      
+      .quote {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
 
       main {
         grid-template-columns: 1fr;
@@ -577,7 +596,7 @@
         <div class="news-item">
           <time>Jun. 2023</time>
           <h4>Dr. Kateryna Talk</h4>
-          <p>Professor Kateryna Makova from Pennsylvania State University delivered a presentation titled 'Non-B DNA and Evolution of Our Genomes' at the Laboratory for optics & biosciences, upon the invitation of Professor Jean-Louis Mergny from École Polytechnique.</p>
+          <p>Professor <a href="https://science.psu.edu/bio/people/kdm16" target="_blank">Kateryna Makova</a> from Pennsylvania State University delivered a presentation titled 'Non-B DNA and Evolution of Our Genomes' at the Laboratory for optics & biosciences, upon the invitation of Professor Jean-Louis Mergny from École Polytechnique.</p>
           <img src="./assets/img/PSU_Kateryna.webp" alt="kateryna2023">
         </div>
         <div class="news-item">
