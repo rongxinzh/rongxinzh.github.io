@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>季逸轩同学高考倒计时官方网站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: "Microsoft YaHei", sans-serif;
+      background: radial-gradient(circle at center, #fff5f0 0%, #ffd6d6 100%);
+    }
+    header {
+      background-color: #c8102e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 2em;
+      text-shadow: 2px 2px 6px gold;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      flex-direction: column;
+    }
+    .countdown {
+      background: #fff;
+      border: 5px solid #b30000;
+      padding: 30px 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px #ff9999;
+      width: 100%;
+      max-width: 400px;
+    }
+    .countdown h2 {
+      font-size: 1.5em;
+      color: #b30000;
+      text-align: center;
+      margin-bottom: 25px;
+      text-shadow: 1px 1px 2px gold;
+    }
+    #timer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 1.8em;
+      color: white;
+      gap: 20px;
+    }
+    #timer span {
+      background: linear-gradient(to right, #ff0000, #ffcc00);
+      padding: 15px 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #ff0000;
+      font-weight: bold;
+      text-shadow: 0 0 5px gold;
+      min-width: 150px;
+      text-align: center;
+    }
+
+    .heartbeat {
+      animation: heartbeat 1s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.25);
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        font-size: 1.5em;
+        padding: 15px;
+      }
+      #timer span {
+        font-size: 1.2em;
+        min-width: 120px;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>季逸轩<br/>高考倒计时 · 官网网站<br/>为梦而战</header>
+  <div class="container">
+    <div class="countdown">
+      <h2>距离想想2034年高考还有：</h2>
+      <div id="timer"></div>
+    </div>
+  </div>
+
+  <script>
+    function updateCountdown() {
+      const targetDate = new Date("2034-06-07T00:00:00");
+      const now = new Date();
+      const diff = targetDate - now;
+
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const m = Math.floor((diff / (1000 * 60)) % 60);
+      const s = Math.floor((diff / 1000) % 60);
+
+      const timer = document.getElementById("timer");
+      timer.innerHTML = `
+        <span>${d} 天</span>
+        <span>${h} 小时</span>
+        <span>${m} 分钟</span>
+        <span id="second" class="heartbeat">${s} 秒</span>
+        <span style="font-size: 0.7em;">由鲜海大队提供技术支持</span>
+      `;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
