@@ -6,429 +6,7 @@
   <title>Rongxin Zhang | Bioinformatics</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Georgia:ital@1&display=swap" rel="stylesheet">
   <link rel="icon" href="./assets/img/favicon.png" type="image/png">
-  <style>
-    :root {
-      --bg: #ffffff;
-      --text: #222;
-      --muted: #555;
-      --accent: #004080;
-      --font-serif: 'Georgia', serif;
-      --font-sans: 'Inter', sans-serif;
-      --light-gray: #f5f5f5;
-    }
-
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: var(--font-sans);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: none;
-    }
-    
-    .intro a,
-    .education-card a,
-    .news-item a {
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-      transition: color 0.2s ease;
-    }
-
-    .intro a:hover,
-    .education-card a:hover,
-    .news-item a:hover {
-      text-decoration: none;
-    }
-
-    .topnav {
-      background: #ffffff;
-      font-size: 0.9rem;
-      padding: 0.8rem 2rem;
-      border-top: 1px solid #ddd;
-      border-bottom: 1px solid #ddd;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .topnav a {
-      margin: 0 1rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-weight: 500;
-      position: relative;
-    }
-
-    .topnav a::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 3px;
-      background: var(--accent);
-      left: 0;
-      bottom: -5px;
-      transform: scaleX(0);
-      transform-origin: bottom left;
-      transition: transform 0.3s ease;
-    }
-
-    .topnav a:hover::after {
-      transform: scaleX(1);
-    }
-
-    header {
-      max-width: 960px;
-      margin: 2.5rem auto 1rem;
-      padding: 0 2rem;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.4rem;
-      font-family: var(--font-serif);
-      font-weight: normal;
-      margin: 0;
-      font-style: italic;
-    }
-
-    .headline {
-      color: var(--muted);
-      font-size: 1.1rem;
-      margin-top: 0.4rem;
-    }
-
-    .quote {
-      font-style: italic;
-      font-family: var(--font-serif);
-      text-align: center;
-      font-size: 1rem;
-      color: #555;
-      margin: 2rem auto 1rem;
-      padding: 0 1rem;
-      max-width: 350px;
-      position: relative;
-    }
-
-    .quote::before, .quote::after {
-      content: "“";
-      font-size: 1.5rem;
-      color: var(--accent);
-      position: absolute;
-    }
-
-    .quote::before {
-      left: -5px;
-      top: -5px;
-    }
-
-    .quote::after {
-      content: "”";
-      right: -5px;
-      top: auto;
-      bottom: 0;
-      transform: translateY(50%);
-    }
-
-    .quote br {
-      display: none;
-    }
-
-    .quote span {
-      display: block;
-      font-style: normal;
-      margin-top: 0.3rem;
-      color:#888;
-    }
-
-    figcaption {
-      font-size: 0.85rem;
-      color: var(--muted);
-      text-align: center;
-      margin-top: 0rem;
-    }
-
-    .education-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
-
-    .education-card {
-      background-color: var(--light-gray);
-      border-radius: 8px;
-      padding: 1.2rem;
-      display: flex;
-      flex-direction: column;
-      border: 1px solid #eee;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .education-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    }
-
-    .education-card h4 {
-      font-family: var(--font-serif);
-      font-size: 1.05rem;
-      margin: 0 0 0.25rem 0;
-      color: var(--accent);
-    }
-
-    .education-card .year {
-      font-size: 0.9rem;
-      color: var(--muted);
-      font-weight: 500;
-      margin-bottom: 0.2rem;
-    }
-
-    .education-card p {
-      font-size: 0.85rem;
-      line-height: 1.6;
-      margin: 0;
-      color: #444;
-    }
-
-    main {
-      max-width: 960px;
-      margin: 2rem auto;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 3rem;
-    }
-
-    article h2 {
-      font-size: 1.4rem;
-      font-family: var(--font-serif);
-      margin-top: 2rem;
-      border-left: 3px solid var(--accent);
-      padding-left: 0.5rem;
-    }
-
-    .research-tags {
-      margin-top: 1rem;
-    }
-
-    .tag {
-      display: inline-block;
-      background-color: #e6f0ff;
-      color: var(--accent);
-      padding: 0.4rem 1rem;
-      margin: 0.4rem;
-      border-radius: 999px;
-      font-size: 0.95rem;
-    }
-
-    article img {
-      max-width: 100%;
-      margin: 0rem 0;
-      border-radius: 8px;
-    }
-
-    .pub-list {
-      margin-top: 1rem;
-      padding-left: 1rem;
-      border-left: 2px solid #eee;
-    }
-
-    .pub-item {
-      margin-bottom: 1.2rem;
-    }
-
-    .pub-item a {
-      display: inline-block;
-      margin-top: 0.4rem;
-      background-color: var(--accent);
-      color: white;
-      padding: 0.4rem 1rem;
-      border-radius: 999px;
-      font-size: 0.85rem;
-    }
-
-    aside h3 {
-      font-family: var(--font-serif);
-      font-size: 1.1rem;
-      margin-top: 1.5rem;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 0.5rem;
-    }
-
-    aside ul {
-      list-style: none;
-      padding-left: 0;
-      margin-top: 0.5rem;
-    }
-
-    aside li {
-      margin-bottom: 0.8rem;
-    }
-
-    .news-section {
-      max-height: 1350px;
-      overflow-y: scroll;
-      margin-top: 1rem;
-      padding-right: 0.5rem;
-      scrollbar-width: thin;
-      scrollbar-color: var(--accent) var(--light-gray);
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .news-section::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    .news-section::-webkit-scrollbar-thumb {
-      background: var(--accent);
-      border-radius: 3px;
-    }
-
-    .news-item {
-      padding: 0.6rem 0.8rem;
-      background: var(--light-gray);
-      border-radius: 6px;
-      margin-bottom: 0.6rem;
-    }
-
-    .news-item time {
-      font-size: 0.75rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-
-    .news-item h4 {
-      margin: 0.2rem 0;
-      font-size: 0.9rem;
-      font-weight: 600;
-      border-left: 2px solid var(--accent);
-      padding-left: 0.4rem;
-    }
-
-    .news-item p {
-      margin: 0.2rem 0;
-      font-size: 0.85rem;
-      color: #444;
-      line-height: 1.4;
-      text-align: justify;
-    }
-
-    .news-item img {
-      max-width: 100%;
-      margin-top: 0.4rem;
-      border-radius: 4px;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.85rem;
-      color: #aaa;
-      margin-top: 4rem;
-      padding-bottom: 2rem;
-    }
-
-    .service-quote {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: var(--muted);
-      font-style: italic;
-      text-align: left;
-      border-left: 3px solid var(--accent);
-      padding-left: 0.6rem;
-      line-height: 1.5;
-    }
-
-    .pub-label {
-      display: inline-block;
-      background-color: #e0e0e0;
-      color: #333;
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 0.15rem 0.6rem;
-      border-radius: 999px;
-      margin-left: 0.5rem;
-      vertical-align: middle;
-    }
-
-    .intro {
-      max-width: 100%;
-      text-align: justify;
-      text-justify: inter-word;
-      line-height: 1.5;
-    }
-
-    @media (max-width: 1024px) {
-      .education-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 768px) {
-      header, main {
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
-
-      header h1 {
-        font-size: 2.2rem;
-      }
-      
-      .quote {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-      }
-
-      main {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      
-      .topnav {
-        position: static;
-        flex-direction: column;
-        padding: 0.8rem 1rem;
-      }
-
-      .topnav a {
-        margin: 0.5rem 0;
-      }
-
-      .education-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .news-section {
-        max-height: none;
-        overflow-y: visible;
-        padding-right: 0;
-      }
-
-      .intro {
-        text-align: left;
-      }
-    }
-
-  </style>
+  <link rel="stylesheet" href="./assets/css/page.css">
 </head>
 <body>
   <div class="topnav">
@@ -529,6 +107,33 @@
           <small>Nanjing, China</small>
         </div>
       </div>
+
+      <div class="carousel-wrapper">
+        <div class="carousel-container">
+            <div class="carousel-slides">
+                <div class="carousel-slide">
+                    <img src="./assets/img/SH_BIOINFO2024.webp" alt="Talk at the 2nd Yangtze River Delta Bioinformatics Academic Conference">
+                </div>
+                <div class="carousel-slide">
+                    <img src="./assets/img/AI_2022_NUAA.webp" alt="Online talk at the CAAI Young Scholars Forum on Bioinformatics and AI">
+                </div>
+                <div class="carousel-slide">
+                    <img src="./assets/img/Bioinfo_2021_NJ.webp" alt="Talk at the 11th Jiangsu Province Bioinformatics Conference">
+                </div>
+            </div>
+    
+            <div class="carousel-nav">
+                <button class="carousel-prev" aria-label="Previous slide">&#10094;</button>
+                <button class="carousel-next" aria-label="Next slide">&#10095;</button>
+            </div>
+
+            <div class="carousel-caption">
+              <p></p> </div>
+
+            <div class="carousel-dots"></div>
+        </div>
+      </div>
+
     </article>
 
     <aside>
@@ -627,15 +232,89 @@
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
-      <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BWW052ZSF6"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BWW052ZSF6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-      gtag('config', 'G-BWW052ZSF6');
-    </script>
+    gtag('config', 'G-BWW052ZSF6');
+  </script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const carouselWrapper = document.querySelector(".carousel-wrapper");
+    if (!carouselWrapper) return;
+
+    const captions = [
+        "Talk at the 2nd Yangtze River Delta Bioinformatics Academic Conference",
+        "Online talk at the CAAI Young Scholars Forum on Bioinformatics and AI",
+        "Talk at the 11th Jiangsu Province Bioinformatics Conference"
+    ];
+
+    const slidesContainer = carouselWrapper.querySelector(".carousel-slides");
+    const slides = carouselWrapper.querySelectorAll(".carousel-slide");
+    const prevButton = carouselWrapper.querySelector(".carousel-prev");
+    const nextButton = carouselWrapper.querySelector(".carousel-next");
+    const captionElement = carouselWrapper.querySelector(".carousel-caption p");
+    const dotsContainer = carouselWrapper.querySelector(".carousel-dots");
+    
+    if (slides.length === 0) return;
+
+    let currentSlide = 0;
+    let slideInterval;
+
+    slides.forEach((_, i) => {
+        const dot = document.createElement("button");
+        dot.classList.add("carousel-dot");
+        dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+        dot.addEventListener("click", () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll(".carousel-dot");
+
+    const updateUI = (slideIndex) => {
+        slidesContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
+        dots.forEach(dot => dot.classList.remove("active"));
+        if (dots[slideIndex]) {
+            dots[slideIndex].classList.add("active");
+        }
+        if (captionElement && captions[slideIndex]) {
+            captionElement.textContent = captions[slideIndex];
+        }
+    };
+
+    const goToSlide = (slideIndex) => {
+        currentSlide = slideIndex;
+        updateUI(slideIndex);
+        resetInterval();
+    };
+
+    nextButton.addEventListener("click", () => {
+        goToSlide((currentSlide + 1) % slides.length);
+    });
+
+    prevButton.addEventListener("click", () => {
+        goToSlide((currentSlide - 1 + slides.length) % slides.length);
+    });
+    
+    const startInterval = () => {
+        slideInterval = setInterval(() => {
+            goToSlide((currentSlide + 1) % slides.length);
+        }, 5000);
+    };
+    
+    const resetInterval = () => {
+        clearInterval(slideInterval);
+        startInterval();
+    };
+
+    updateUI(0);
+    startInterval();
+  });
+  </script>
 
 </body>
 </html>
