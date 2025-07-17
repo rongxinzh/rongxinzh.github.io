@@ -220,6 +220,7 @@ main {
 article, aside {
     display: flex;
     flex-direction: column;
+    min-height: 100%;
 }
 
 article h2 {
