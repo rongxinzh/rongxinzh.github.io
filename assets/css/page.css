@@ -283,7 +283,7 @@ aside li {
 }
 
 .news-section {
-  max-height: 1682px;
+  /*max-height: 1682px;*/
   overflow-y: scroll;
   margin-top: 1rem;
   padding-right: 0.5rem;
