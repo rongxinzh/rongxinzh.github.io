@@ -389,13 +389,11 @@ footer {
 */
 
 .carousel-wrapper {
-max-width: 90%;
-margin-top: auto;
- margin-bottom: 0;
-position: relative;
+    max-width: 90%;
+    margin-top: auto;
+    margin-bottom: 0;
+    position: relative;
 }
-
-
 
 .carousel-container {
     position: relative;
@@ -545,6 +543,7 @@ position: relative;
     }
 
     main {
+        display: grid;
         grid-template-columns: 1fr;
         gap: 2rem;
     }
