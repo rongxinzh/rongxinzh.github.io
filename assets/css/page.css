@@ -199,7 +199,7 @@ figcaption {
     margin: 0;
     color: #444;
 }
-/*
+
 main {
     max-width: 960px;
     margin: 2rem auto;
@@ -207,20 +207,6 @@ main {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 3rem;
-}*/
-
-main {
-    max-width: 960px;
-    margin: 2rem auto;
-    padding: 0 2rem;
-    display: flex;
-    gap: 3rem;
-}
-
-article, aside {
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
 }
 
 article h2 {
@@ -290,7 +276,7 @@ aside li {
 }
 
 .news-section {
-    max-height: 2000px;
+    max-height: 1682px;
     overflow-y: scroll;
     margin-top: 1rem;
     padding-right: 0.5rem;
@@ -381,18 +367,10 @@ footer {
     text-justify: inter-word;
     line-height: 1.5;
 }
-/*
-.carousel-wrapper {
-    max-width: 90%;
-    margin: 2rem auto 0;
-    position: relative;
-}
-*/
 
 .carousel-wrapper {
     max-width: 90%;
-    margin-top: auto;
-    margin-bottom: 0;
+    margin: 2rem auto 0;
     position: relative;
 }
 
@@ -526,14 +504,6 @@ footer {
         padding-right: 1rem;
     }
 
-    .quote::before {
-        left: 10px;
-    }
-
-    .quote::after {
-        right: 10px;
-    }
-
     header h1 {
         font-size: 2.2rem;
     }
@@ -543,8 +513,15 @@ footer {
         padding-right: 1.5rem;
     }
 
+    .quote::before {
+        left: 10px;
+    }
+
+    .quote::after {
+        right: 10px;
+    }
+
     main {
-        display: grid;
         grid-template-columns: 1fr;
         gap: 2rem;
     }
