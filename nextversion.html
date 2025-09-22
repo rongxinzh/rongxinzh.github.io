@@ -179,22 +179,10 @@
             </div>
             <h3 id="news">News</h3>
             <div class="accordion">
-
                <div class="accordion-item active">
                   <button class="accordion-header">Pinned 📌<span class="arrow">▶</span>
                   </button>
-                  <div class="accordion-content">
-                     <div class="news-item">
-                        <time>Jul. 2024</time>
-                        <h4>PhD Defended</h4>
-                        <p>Rongxin successfully defended his PhD dissertation! 🥂 🎊</p>
-                     </div>
-                     <div class="news-item">
-                        <time>Jun. 2023</time>
-                        <h4>Dr. Kateryna Talk</h4>
-                        <p>Professor <a href="https://science.psu.edu/bio/people/kdm16" target="_blank">Kateryna Makova</a> from Pennsylvania State University delivered a presentation titled 'Non-B DNA and Evolution of Our Genomes' at the Laboratory for optics &amp; biosciences, upon the invitation of Professor Jean-Louis Mergny from &Eacute;cole Polytechnique.</p>
-                        <img src="./assets/img/PSU_Kateryna.webp" alt="kateryna2023" /> 
-                     </div>
+                  <div class="accordion-content" id="pinned-news">
                   </div>
                </div>
                <div class="accordion-item">
@@ -224,7 +212,7 @@
                         <h4>G4SNVHunter Package Released</h4>
                         <p>Our <a href="https://github.com/rongxinzh/G4SNVHunter" target="_blank">G4SNVHunter package</a> was released in the devel branch of <a href="https://bioconductor.org/packages/devel/bioc/html/G4SNVHunter.html" target="_blank">Bioconductor</a>. This R package was designed to evaluate the impact of small-scale variants on G4 formation propensity.<br />The vignette is available at this <a href="https://rongxinzh.github.io/G4SNVHunter/G4SNVHunter.html" target="_blank">link</a>.</p>
                      </div>
-                     <div class="news-item">
+                     <div class="news-item" data-pinned="true">
                         <time>Jul. 2024</time>
                         <h4>PhD Defended</h4>
                         <p>Rongxin successfully defended his PhD dissertation! 🥂 🎊</p>
@@ -251,7 +239,7 @@
                         <p>The <a href="https://ishg2023.sciencesconf.org/" target="_blank">International Symposium on Human Genomics</a> was successfully held at the CNRS headquarters in Paris. Rongxin presented a poster showing his latest research progress on how G-quadruplexes affect the use of promoters.</p>
                         <img src="./assets/img/Banniere_finale_1000pxl_1.webp" alt="ishg2023" /> 
                      </div>
-                     <div class="news-item">
+                     <div class="news-item" data-pinned="true">
                         <time>Jun. 2023</time>
                         <h4>Dr. Kateryna Talk</h4>
                         <p>Professor <a href="https://science.psu.edu/bio/people/kdm16" target="_blank">Kateryna Makova</a> from Pennsylvania State University delivered a presentation titled 'Non-B DNA and Evolution of Our Genomes' at the Laboratory for optics &amp; biosciences, upon the invitation of Professor Jean-Louis Mergny from &Eacute;cole Polytechnique.</p>
@@ -360,6 +348,12 @@
            next.addEventListener("click", () => go(current + 1));
            setInterval(() => go(current + 1), 5000);
            update();
+         
+           const pinnedContainer = document.getElementById("pinned-news");
+            const pinnedItems = document.querySelectorAll(".news-item[data-pinned='true']");
+         pinnedItems.forEach(item => {
+            pinnedContainer.appendChild(item.cloneNode(true));
+            });
          });
       </script>
    </body>
