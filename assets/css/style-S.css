@@ -697,6 +697,18 @@ footer {
     text-decoration: underline
 }
 
+.footer-stats {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: #eee;
+}
+
+.footer-stats p {
+  margin: 0.4rem 0;
+}
+
 .footer-bottom {
     font-size: .8rem;
     color: #ddd
