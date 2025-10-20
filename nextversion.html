@@ -302,29 +302,22 @@
             <p>
                <a href="#research">Research</a> · <a href="#publications">Works</a> · <a href="#talks">Talks</a> · <a href="#contact">Contact</a>
             </p>
-            <p>Archived versions: 
-               <a href="./index.html" target="_blank">2025 · v2</a> | 
-               <a href="./archived-V2023.html" target="_blank">2023 · v1</a>
+            <!-->
+               <p>Archived versions: 
+                  <a href="./index.html" target="_blank">2025 · v2</a> | 
+                  <a href="./archived-V2023.html" target="_blank">2023 · v1</a>
+               </p><-->
+            <p>
+               Your IP: <script type="text/javascript" src="//ipaddress.is/ipwidget.php?type=1&nogeo=1&nosys=1"></script>
             </p>
-
-
-                <p>Your IP: 
-      <script type="text/javascript" src="//ipaddress.is/ipwidget.php?type=1&nogeo=1&nosys=1"></script>
-    </p>
-    <p>
-      Unique visitors: 
-      <script type="text/javascript" src="//widget.supercounters.com/ssl/texthit.js"></script>
-      <script type="text/javascript">
-        var sc_texthit_var = sc_texthit_var || [];
-        sc_text_hit(1723544, "", "b3995d");
-      </script>
-    </p>
-    <p id="update-info"></p>
-
-
-    
+            <p>
+               Unique visitors: <script type="text/javascript" src="//widget.supercounters.com/ssl/texthit.js"></script><script type="text/javascript">
+                  var sc_texthit_var = sc_texthit_var || [];
+                  sc_text_hit(1723544, "", "b3995d");
+               </script>
+            </p>
+            <p id="update-info"></p>
          </div>
-  
          <div class="footer-bottom">&copy; 2023-<span id="year"></span> Rongxin Zhang. All rights reserved. </div>
       </footer>
       <script>
@@ -374,30 +367,27 @@
             });
          });
       </script>
-
       <script>
-  const lastModified = new Date(document.lastModified);
-  const now = new Date();
-
-  const diffTime = now - lastModified;
-  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-
-  let label = "";
-  if (diffDays < 1) {
-    label = "updated: today";
-  } else if (diffDays === 1) {
-    label = "updated: yesterday";
-  } else if (diffDays <= 7) {
-    label = "updated: this week";
-  } else if (diffDays <= 30) {
-    label = "updated: this month";
-  } else {
-    label = "updated: a while ago";
-  }
-
-  document.getElementById("update-info").textContent = `Last ${label}`;
-</script>
-
-
+         const lastModified = new Date(document.lastModified);
+         const now = new Date();
+         
+         const diffTime = now - lastModified;
+         const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+         
+         let label = "";
+         if (diffDays < 1) {
+           label = "updated: today";
+         } else if (diffDays === 1) {
+           label = "updated: yesterday";
+         } else if (diffDays <= 7) {
+           label = "updated: this week";
+         } else if (diffDays <= 30) {
+           label = "updated: this month";
+         } else {
+           label = "updated: a while ago";
+         }
+         
+         document.getElementById("update-info").textContent = `Last ${label}`;
+      </script>
    </body>
 </html>
