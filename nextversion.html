@@ -319,6 +319,7 @@
         sc_text_hit(1723544, "", "b3995d");
       </script>
     </p>
+    <p id="update-info"></p>
   </div>
   
          <div class="footer-bottom">&copy; 2023-<span id="year"></span> Rongxin Zhang. All rights reserved. </div>
@@ -370,5 +371,30 @@
             });
          });
       </script>
+
+      <script>
+  const lastModified = new Date(document.lastModified);
+  const now = new Date();
+
+  const diffTime = now - lastModified;
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+  let label = "";
+  if (diffDays < 1) {
+    label = "Updated: today";
+  } else if (diffDays === 1) {
+    label = "Updated: yesterday";
+  } else if (diffDays <= 7) {
+    label = "Updated: this week";
+  } else if (diffDays <= 30) {
+    label = "Updated: this month";
+  } else {
+    label = "Updated: a while ago";
+  }
+
+  document.getElementById("update-info").textContent = `Last ${label}`;
+</script>
+
+
    </body>
 </html>
