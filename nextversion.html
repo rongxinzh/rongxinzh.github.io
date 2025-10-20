@@ -381,15 +381,15 @@
 
   let label = "";
   if (diffDays < 1) {
-    label = "Updated: today";
+    label = "updated: today";
   } else if (diffDays === 1) {
-    label = "Updated: yesterday";
+    label = "updated: yesterday";
   } else if (diffDays <= 7) {
-    label = "Updated: this week";
+    label = "updated: this week";
   } else if (diffDays <= 30) {
-    label = "Updated: this month";
+    label = "updated: this month";
   } else {
-    label = "Updated: a while ago";
+    label = "updated: a while ago";
   }
 
   document.getElementById("update-info").textContent = `Last ${label}`;

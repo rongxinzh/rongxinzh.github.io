@@ -705,8 +705,21 @@ footer {
   color: #eee;
 }
 
-.footer-stats p {
-  margin: 0.4rem 0;
+.footer-stats a {
+    color: var(--gold);
+    margin: 0 .5rem;
+    text-decoration: none
+}
+
+.footer-stats a:hover {
+    text-decoration: underline
+}
+
+#update-info {
+  font-size: 0.85rem;
+  color: #ccc;
+  font-style: italic;
+  margin-top: 0.4rem;
 }
 
 .footer-bottom {
