@@ -61,6 +61,7 @@ a:hover {
 .brand {
     font-family: var(--font-serif);
     font-weight: 700;
+    font-style: italic;
     font-size: 1.4rem;
     color: #fff;
     justify-self: start
@@ -217,6 +218,7 @@ a:hover {
     letter-spacing: .5px;
     font-family: var(--font-serif);
     font-weight: 700;
+    font-style: italic;
     color: var(--cardinal);
 }
 
@@ -264,6 +266,7 @@ a:hover {
 .tagline .cn {
     font-size: .95rem;
     font-weight: 400;
+    font-style: italic;
     letter-spacing: .4px;
     color: var(--muted)
 }
@@ -304,6 +307,7 @@ aside h3 {
 article h2 {
     font-size: 1.6rem;
     margin: 1.5rem 0 1rem;
+    font-style: italic;
     border-left: 5px solid var(--cardinal);
     padding-left: .7rem
 }
@@ -467,6 +471,7 @@ figcaption {
     font-family: var(--font-serif);
     font-size: 1.05rem;
     font-weight: 600;
+    font-style: italic;
     color: var(--cardinal);
     margin-bottom: .3rem
 }
@@ -480,7 +485,8 @@ figcaption {
 /* ===== Aside ===== */
 aside h3 {
     margin-top: 1rem;
-    font-size: 1.3rem
+    font-size: 1.3rem;
+    font-style: italic
 }
 
 .research-tags {
