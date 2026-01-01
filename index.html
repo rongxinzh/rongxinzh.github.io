@@ -66,6 +66,15 @@
             <h2 id="publications">Selected Works</h2>
             <div class="pub-list">
                <div class="pub-item">
+                  <strong>G-quadruplex structures as modulators of alternative promoter usage</strong>
+                  <span class="pub-label">Paper</span>
+                  <br />
+                  <small>NAR Genomics and Bioinformatics, 2025</small>
+                  <br />
+                  <a href="https://academic.oup.com/nargab/article/7/4/lqaf208/8407651?searchresult=1" target="_blank">View Paper</a>
+               </div>
+
+               <div class="pub-item">
                   <strong>G4SNVHunter: An R/Bioconductor Package for Evaluating SNV-Induced Disruption of G-Quadruplex Structures Leveraging the G4Hunter Algorithm</strong>
                   <span class="pub-label">Paper</span>
                   <br />
@@ -191,6 +200,11 @@
                   <button class="accordion-header">2025 <span class="arrow">▶</span>
                   </button>
                   <div class="accordion-content">
+                     <div class="news-item">
+                        <time>Dec. 2025</time>
+                        <h4>Year-End Publication</h4>
+                        <p>Our bioinformatics study on G-quadruplexes and alternative promoters, conducted and completed at École Polytechnique during my time there, was <a href="https://academic.oup.com/nargab/article/7/4/lqaf208/8407651?searchresult=1" target="_blank">published online</a> on the final day of the year. This is my first publication as a co-corresponding author. 🎉</p>
+                     </div>
                      <div class="news-item">
                         <time>Nov. 2025</time>
                         <h4>We’ve Changed Our Domain!</h4>
@@ -374,24 +388,32 @@
       <script>
          const lastModified = new Date(document.lastModified);
          const now = new Date();
-         
-         const diffTime = now - lastModified;
-         const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-         
-         let label = "";
-         if (diffDays < 1) {
-           label = "updated: today";
+
+         const diffMs = now - lastModified;
+         const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+         let label;
+
+         if (diffDays === 0) {
+           label = "updated today";
          } else if (diffDays === 1) {
-           label = "updated: yesterday";
-         } else if (diffDays <= 7) {
-           label = "updated: this week";
-         } else if (diffDays <= 30) {
-           label = "updated: this month";
+           label = "updated yesterday";
+         } else if (diffDays < 7) {
+           label = "updated within the last week";
+         } else if (diffDays < 30) {
+           label = "updated within the last month";
          } else {
-           label = "updated: a while ago";
+           label = `updated on ${lastModified.toLocaleDateString(
+             "en-US",
+             { year: "numeric", month: "short", day: "numeric" }
+            )}`;
          }
-         
-         document.getElementById("update-info").textContent = `Page last ${label}`;
+
+         const el = document.getElementById("update-info");
+         if (el) {
+           el.textContent = label;
+         }
       </script>
+
    </body>
 </html>
