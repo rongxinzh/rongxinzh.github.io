@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>G4SNVHunter · Download Statistics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Georgia:ital@1&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1"></script>
+
+  <style>
+    :root {
+      --cardinal: #8C1515;
+      --gold: #B3995D;
+      --text: #2e2d29;
+      --muted: #666;
+      --font-serif: 'Georgia', serif;
+      --font-sans: 'Inter', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      color: var(--text);
+      line-height: 1.7;
+      background: #fff;
+    }
+
+    a {
+      color: var(--cardinal);
+      text-decoration: underline;
+    }
+    a:hover {
+      color: var(--gold);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--cardinal);
+      margin-bottom: 0.2rem;
+    }
+
+    .links {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .links a {
+      text-decoration: none;
+    }
+
+    .links span {
+      margin: 0 0.4rem;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .chart-wrapper {
+      height: 420px;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<main>
+  <h1>G4SNVHunter</h1>
+
+  <div class="links">
+    <a href="https://github.com/rongxinzh/G4SNVHunter" target="_blank">GitHub</a><span>·</span>
+    <a href="https://bioconductor.org/packages/G4SNVHunter" target="_blank">Bioconductor (release)</a><span>·</span>
+    <a href="https://bioconductor.org/packages/devel/bioc/html/G4SNVHunter.html" target="_blank">Bioconductor (devel)</a><span>·</span>
+    <a href="https://rongxinzh.github.io/G4SNVHunter/G4SNVHunter.html" target="_blank">Tutorial</a>
+  </div>
+
+  <p class="note">
+    G4SNVHunter download statistics.
+  </p>
+
+  <div class="chart-wrapper">
+    <canvas id="downloadsChart"></canvas>
+  </div>
+
+  <p class="note">
+    Data source: Bioconductor package download logs.
+  </p>
+
+  <p class="note">
+    ← <a href="index.html">Back to homepage</a>
+  </p>
+</main>
+
+<script>
+(function () {
+  const RAW =
+    "https://bioconductor.org/packages/stats/bioc/G4SNVHunter/G4SNVHunter_2025_stats.tab";
+  const URL =
+    "https://api.allorigins.win/raw?url=" + encodeURIComponent(RAW);
+
+  fetch(URL)
+    .then(r => r.text())
+    .then(txt => {
+      const rows = txt.trim().split("\n").slice(1);
+
+      const labels = [];
+      const downloads = [];
+      const ips = [];
+
+      rows.forEach(r => {
+        const [y, m, ip, dl] = r.split("\t");
+        if (m === "all") return;
+        labels.push(m);
+        downloads.push(+dl);
+        ips.push(+ip);
+      });
+
+      new Chart(document.getElementById("downloadsChart"), {
+        type: "bar",
+        data: {
+          labels,
+          datasets: [
+            {
+              label: "Downloads",
+              data: downloads,
+              backgroundColor: "rgba(140, 21, 21, 0.85)",
+              borderColor: "rgba(140, 21, 21, 1)",
+              borderWidth: 1
+            },
+            {
+              label: "Distinct IPs",
+              data: ips,
+              backgroundColor: "rgba(179, 153, 93, 0.75)",
+              borderColor: "rgba(179, 153, 93, 1)",
+              borderWidth: 1
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          },
+          plugins: {
+            legend: {
+              labels: {
+                boxWidth: 12,
+                boxHeight: 12
+              }
+            }
+          }
+        }
+      });
+    });
+})();
+</script>
+
+</body>
+</html>

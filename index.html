@@ -81,6 +81,7 @@
                   <small>PLOS Computational Biology, 2025</small>
                   <br />
                   <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1013368" target="_blank">View Paper</a>
+                  <a href="./g4snvhunter_statistics.html" target="_blank">Package download statistics</a>
                </div>
                <div class="pub-item">
                   <strong>G-quadruplexes as pivotal components of cis-regulatory elements in the human genome</strong>
@@ -333,6 +334,7 @@
                   sc_text_hit(1723544, "", "b3995d");
                </script>
             </p>
+            <p><a href="./g4snvhunter_statistics.html">Download statistics</a>for G4SNVHunter package</p>
             <p id="update-info"></p>
          </div>
          <div class="footer-bottom">&copy; 2023-<span id="year"></span> Rongxin Zhang. All rights reserved. </div>
@@ -395,15 +397,15 @@
          let label;
 
          if (diffDays === 0) {
-           label = "updated today";
+           label = "Homepage updated today";
          } else if (diffDays === 1) {
-           label = "updated yesterday";
+           label = "Homepage updated yesterday";
          } else if (diffDays < 7) {
-           label = "updated within the last week";
+           label = "Homepage updated within the last week";
          } else if (diffDays < 30) {
-           label = "updated within the last month";
+           label = "Homepage updated within the last month";
          } else {
-           label = `updated on ${lastModified.toLocaleDateString(
+           label = `Homepage updated on ${lastModified.toLocaleDateString(
              "en-US",
              { year: "numeric", month: "short", day: "numeric" }
             )}`;
