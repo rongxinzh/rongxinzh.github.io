@@ -47,6 +47,14 @@
       margin-bottom: 0.2rem;
     }
 
+    h2 {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--cardinal);
+      margin-top: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
     .links {
       font-size: 0.9rem;
       color: var(--muted);
@@ -71,6 +79,10 @@
       height: 420px;
       margin-top: 0.5rem;
     }
+
+    section {
+      margin-bottom: 3.5rem;
+    }
   </style>
 </head>
 
@@ -90,9 +102,9 @@
     G4SNVHunter download statistics. Data loading may take a few seconds :)
   </p>
 
-  <div class="chart-wrapper">
-    <canvas id="downloadsChart"></canvas>
-  </div>
+  <p class="note" id="dataAsOf"></p>
+
+  <div id="yearly-charts"></div>
 
   <p class="note">
     Data source: Bioconductor package download logs.
@@ -105,68 +117,95 @@
 
 <script>
 (function () {
-  const RAW =
-    "https://bioconductor.org/packages/stats/bioc/G4SNVHunter/G4SNVHunter_2025_stats.tab";
-  const URL =
-    "https://api.allorigins.win/raw?url=" + encodeURIComponent(RAW);
+  const START_YEAR = 2025;
+  const CURRENT_YEAR = new Date().getFullYear();
+  const TODAY = new Date().toISOString().slice(0, 10);
 
-  fetch(URL)
-    .then(r => r.text())
-    .then(txt => {
-      const rows = txt.trim().split("\n").slice(1);
+  document.getElementById("dataAsOf").textContent =
+    `Data as of ${TODAY}`;
 
-      const labels = [];
-      const downloads = [];
-      const ips = [];
+  const container = document.getElementById("yearly-charts");
 
-      rows.forEach(r => {
-        const [y, m, ip, dl] = r.split("\t");
-        if (m === "all") return;
-        labels.push(m);
-        downloads.push(+dl);
-        ips.push(+ip);
-      });
+  function createYearSection(year) {
+    const section = document.createElement("section");
+    section.innerHTML = `
+      <h2>${year} Downloads</h2>
+      <div class="chart-wrapper">
+        <canvas id="chart-${year}"></canvas>
+      </div>
+    `;
+    container.appendChild(section);
+    return document.getElementById(`chart-${year}`);
+  }
 
-      new Chart(document.getElementById("downloadsChart"), {
-        type: "bar",
-        data: {
-          labels,
-          datasets: [
-            {
-              label: "Downloads",
-              data: downloads,
-              backgroundColor: "rgba(140, 21, 21, 0.85)",
-              borderColor: "rgba(140, 21, 21, 1)",
-              borderWidth: 1
-            },
-            {
-              label: "Distinct IPs",
-              data: ips,
-              backgroundColor: "rgba(179, 153, 93, 0.75)",
-              borderColor: "rgba(179, 153, 93, 1)",
-              borderWidth: 1
-            }
-          ]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          },
-          plugins: {
-            legend: {
-              labels: {
-                boxWidth: 12,
-                boxHeight: 12
+  function loadYearData(year) {
+    const RAW =
+      `https://bioconductor.org/packages/stats/bioc/G4SNVHunter/G4SNVHunter_${year}_stats.tab`;
+    const URL =
+      "https://api.allorigins.win/raw?url=" + encodeURIComponent(RAW);
+
+    const canvas = createYearSection(year);
+
+    fetch(URL)
+      .then(r => r.text())
+      .then(text => {
+        if (!text.includes("Year\tMonth")) {
+          throw new Error("Invalid stats file");
+        }
+
+        const rows = text.trim().split("\n").slice(1);
+
+        const labels = [];
+        const downloads = [];
+        const ips = [];
+
+        rows.forEach(row => {
+          const [y, m, ip, dl] = row.split("\t");
+          if (m === "all") return;
+          labels.push(m);
+          downloads.push(Number(dl));
+          ips.push(Number(ip));
+        });
+
+        new Chart(canvas, {
+          type: "bar",
+          data: {
+            labels,
+            datasets: [
+              {
+                label: "Downloads",
+                data: downloads,
+                backgroundColor: "rgba(140, 21, 21, 0.85)",
+                borderColor: "rgba(140, 21, 21, 1)",
+                borderWidth: 1
+              },
+              {
+                label: "Distinct IPs",
+                data: ips,
+                backgroundColor: "rgba(179, 153, 93, 0.75)",
+                borderColor: "rgba(179, 153, 93, 1)",
+                borderWidth: 1
               }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: { beginAtZero: true }
             }
           }
-        }
+        });
+      })
+      .catch(() => {
+        canvas.parentElement.innerHTML =
+          `<p class="note">No download statistics available for ${year}.</p>`;
       });
-    });
+  }
+
+  for (let year = CURRENT_YEAR; year >= START_YEAR; year--) {
+    loadYearData(year);
+  }
 })();
 </script>
 
