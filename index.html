@@ -10,8 +10,8 @@
       <title>Rongxin Zhang | Bioinformatics</title>
       <!--<link rel="preconnect" href="https://fonts.googleapis.com" referrerpolicy="no-referrer">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin referrerpolicy="no-referrer">-->
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Georgia:ital@1&display=swap" rel="stylesheet" referrerpolicy="no-referrer">
-      <link rel="stylesheet" href="./assets/css/style-S.css">
+      <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" referrerpolicy="no-referrer">
+      <link rel="stylesheet" href="./assets/css/style_S.css">
    </head>
    <body>
       <!-- Top Navigation -->
@@ -40,16 +40,19 @@
       </div>
       <!-- Header -->
       <header class="site-header">
-         <div class="header-photo">
-            <img src="./assets/img/avatar.jpg" alt="Profile photo" />
-         </div>
-         <div class="header-text">
-            <h1>Rongxin Zhang</h1>
-            <div class="tagline">
-               <p class="en">
-                  <span class="quote-left">“</span>The greatest truths are the simplest.
-               </p>
-               <p class="cn">大道至简 <span class="quote-right">”</span>
+         <div class="header-top">
+            <div class="header-photo">
+               <img src="./assets/img/avatar.jpg" alt="Profile photo" />
+            </div>
+            <div class="header-text">
+               <p class="role-kicker">Postdoctoral Scholar, Stanford University</p>
+               <h1>Rongxin Zhang</h1>
+               <p class="header-email">
+                  <svg class="mail-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                     <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                     <path d="m2 6 10 7L22 6"></path>
+                  </svg>
+                  <a href="mailto:rongxin.zhang@stanford.edu">rongxin.zhang@stanford.edu</a>
                </p>
             </div>
          </div>
@@ -57,7 +60,7 @@
       <main>
          <article>
             <h2 id="introduction">Introduction</h2>
-            <p class="intro">Hi, I'm Rongxin, and welcome!<br />I am currently a postdoctoral researcher at Stanford University 🇺🇸. Prior to this, I received my Ph.D. from the State Key Laboratory of Digital Medical Engineering at Southeast University 🇨🇳, during which I did part of my Ph.D. training in <a href="https://www.ae-info.org/ae/Member/Mergny_Jean-Louis" target="_blank">Dr. Jean-Louis Mergny's</a> lab at &Eacute;cole Polytechnique in France 🇫🇷.<br />My Ph.D. projects involved uncovering the regulatory role of <a href="https://en.wikipedia.org/wiki/G-quadruplex" target="_blank">G-quadruplexes (G4s)</a>, special non-B nucleic acid secondary structures, and their implication in diseases.</p>
+            <p class="intro">Hi, I'm Rongxin, and welcome!<br />I am currently a postdoctoral scholar at Stanford University 🇺🇸. Prior to this, I received my Ph.D. from the State Key Laboratory of Digital Medical Engineering at Southeast University 🇨🇳, during which I did part of my Ph.D. training in <a href="https://www.ae-info.org/ae/Member/Mergny_Jean-Louis" target="_blank">Dr. Jean-Louis Mergny's</a> lab at &Eacute;cole Polytechnique in France 🇫🇷.<br />My Ph.D. projects involved uncovering the regulatory role of <a href="https://en.wikipedia.org/wiki/G-quadruplex" target="_blank">G-quadruplexes (G4s)</a>, special non-B nucleic acid secondary structures, and their implication in diseases.</p>
             <figure>
                <img src="./assets/img/G4_research.png" alt="Research Overview" />
                <figcaption>Figure adapted from my Ph.D. dissertation.</figcaption>
@@ -66,51 +69,39 @@
             <h2 id="publications">Selected Works</h2>
             <div class="pub-list">
                <div class="pub-item">
-                  <strong>G-quadruplex structures as modulators of alternative promoter usage</strong>
-                  <span class="pub-label">Paper</span>
-                  <br />
+                  <strong>G-quadruplex structures as modulators of alternative promoter usage</strong> <span class="pub-label">Paper</span><br />
                   <small>NAR Genomics and Bioinformatics, 2025</small>
                   <br />
                   <a href="https://academic.oup.com/nargab/article/7/4/lqaf208/8407651?searchresult=1" target="_blank">View Paper</a>
                </div>
 
                <div class="pub-item">
-                  <strong>G4SNVHunter: An R/Bioconductor Package for Evaluating SNV-Induced Disruption of G-Quadruplex Structures Leveraging the G4Hunter Algorithm</strong>
-                  <span class="pub-label">Paper</span>
-                  <br />
+                  <strong>G4SNVHunter: An R/Bioconductor Package for Evaluating SNV-Induced Disruption of G-Quadruplex Structures Leveraging the G4Hunter Algorithm</strong> <span class="pub-label">Paper</span><br />
                   <small>PLOS Computational Biology, 2025</small>
                   <br />
                   <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1013368" target="_blank">View Paper</a>
-                  <a href="./g4snvhunter_statistics.html" target="_blank">Package download statistics</a>
+                  <a href="https://www.bioconductor.org/packages/release/bioc/html/G4SNVHunter.html" target="_blank">Package</a>
                </div>
                <div class="pub-item">
-                  <strong>G-quadruplexes as pivotal components of cis-regulatory elements in the human genome</strong>
-                  <span class="pub-label">Paper</span>
-                  <br />
+                  <strong>G-quadruplexes as pivotal components of cis-regulatory elements in the human genome</strong> <span class="pub-label">Paper</span><br />
                   <small>BMC Biology, 2024</small>
                   <br />
                   <a href="https://doi.org/10.1186/s12915-024-01971-5" target="_blank">View Paper</a>
                </div>
                <div class="pub-item">
-                  <strong>G-quadruplex structures are key modulators of somatic structural variants in cancers</strong>
-                  <span class="pub-label">Paper</span>
-                  <br />
+                  <strong>G-quadruplex structures are key modulators of somatic structural variants in cancers</strong> <span class="pub-label">Paper</span><br />
                   <small>Cancer Research, 2023</small>
                   <br />
                   <a href="https://doi.org/10.1158/0008-5472.can-22-3089" target="_blank">View Paper</a>
                </div>
                <div class="pub-item">
-                  <strong>Whole Genome Identification of Potential G-Quadruplexes and Analysis of the G-Quadruplex Binding Domain for SARS-CoV-2</strong>
-                  <span class="pub-label">Paper</span>
-                  <br />
+                  <strong>Whole Genome Identification of Potential G-Quadruplexes and Analysis of the G-Quadruplex Binding Domain for SARS-CoV-2</strong> <span class="pub-label">Paper</span><br />
                   <small>Frontiers in Genetics, 2020</small>
                   <br />
                   <a href="https://doi.org/10.3389/fgene.2020.587829" target="_blank">View Paper</a>
                </div>
                <div class="pub-item">
-                  <strong>Biological Data Analysis and Practice</strong>
-                  <span class="pub-label">Book</span>
-                  <br />
+                  <strong>Biological Data Analysis and Practice</strong> <span class="pub-label">Book</span><br />
                   <small>Rongxin was responsible for Chapter 9 [Transcription factor binding data and its analysis].</small>
                   <br />
                   <small>Southeast University Press, 2021</small>
@@ -120,41 +111,21 @@
                </div>
             </div>
             <h2 id="talks">Talks</h2>
-            <div class="carousel-wrapper">
-               <div class="carousel-container">
-                  <div class="carousel-slides">
-                     <div class="carousel-slide">
-                        <img src="./assets/img/SH_BIOINFO2024.webp" alt="Talk 2024" />
-                     </div>
-                     <div class="carousel-slide">
-                        <img src="./assets/img/AI_2022_NUAA.webp" alt="Talk 2022" />
-                     </div>
-                     <div class="carousel-slide">
-                        <img src="./assets/img/Bioinfo_2021_NJ.webp" alt="Talk 2021" />
-                     </div>
-                  </div>
-                  <div class="carousel-nav">
-                     <button class="carousel-prev" aria-label="Previous">❮</button>
-                     <button class="carousel-next" aria-label="Next">❯</button>
-                  </div>
-                  <div class="carousel-caption">
-                     <p></p>
-                  </div>
-                  <div class="carousel-dots"></div>
-               </div>
-            </div>
-            <div class="talks-list">
+            <div class="talks-timeline">
                <div class="talks-item">
+                  <span class="talk-year">2024</span>
                   <strong>Structure Matters: Unraveling G-Quadruplex Influence on Regulatory Elements</strong>
-                  <p>The Second Bioinformatics Academic Conference of the Yangtze River Delta 2024 · 📍Shanghai, China</p>
+                  <p>The Second Bioinformatics Academic Conference of the Yangtze River Delta · <span class="talk-loc">📍 Shanghai, China</span></p>
                </div>
                <div class="talks-item">
+                  <span class="talk-year">2022</span>
                   <strong>Integrative analyses reveal G-quadruplex structure as a key modulator of cancer genome instability</strong>
-                  <p>Chinese Association for Artificial Intelligence Young Scholars Forum on Bioinformatics and Artificial Intelligence 2022 · 📍Nanjing, China</p>
+                  <p>Chinese Association for Artificial Intelligence Young Scholars Forum on Bioinformatics and Artificial Intelligence · <span class="talk-loc">📍 Nanjing, China</span></p>
                </div>
                <div class="talks-item">
+                  <span class="talk-year">2021</span>
                   <strong>Genomic distribution and potential role of RNA G-quadruplexes in SARS-CoV-2</strong>
-                  <p>The 11th Bioinformatics Conference of Jiangsu Province 2021 · 📍Nanjing, China</p>
+                  <p>The 11th Bioinformatics Conference of Jiangsu Province · <span class="talk-loc">📍 Nanjing, China</span></p>
                </div>
             </div>
          </article>
@@ -205,6 +176,11 @@
                         <time>May 2026</time>
                         <h4>Dissertation</h4>
                         <p>Rongxin's dissertation was selected as an Outstanding Doctoral Dissertation of Southeast University. 🎉</p>
+                     </div>
+                     <div class="news-item">
+                        <time>Jul 2026</time>
+                        <h4>New Database Released</h4>
+                        <p>Excited to announce the release of our pan-cancer database of transcribed non-coding elements, <a href="https://www.seubioinfo.cn/tneatlas" target="_blank">TNEAtlas</a>, with G4SNVHunter tools integrated.</p>
                      </div>
                   </div>
                </div>
@@ -296,13 +272,9 @@
             <ul>
                <li>Reviewer: <br />
                   <a href="https://genomebiology.biomedcentral.com/" target="_blank" rel="noopener">Genome Biology</a>
-                  <br />
                   <a href="https://www.frontiersin.org/journals/immunology" target="_blank" rel="noopener">Frontiers in Immunology</a>
-                  <br />
                   <a href="https://www.frontiersin.org/journals/molecular-biosciences" target="_blank" rel="noopener">Frontiers in Molecular Biosciences</a>
-                  <br />
                   <a href="https://www.sciencedirect.com/journal/biochimie" target="_blank" rel="noopener">Biochimie</a>
-                  <br />
                   <a href="https://www.nature.com/srep/" target="_blank" rel="noopener">Scientific Reports</a>
                   <br />
                </li>
@@ -322,6 +294,13 @@
          </aside>
       </main>
       <footer>
+         <div class="tagline tagline--footer">
+            <p class="en">
+               <span class="quote-left">“</span>The greatest truths are the simplest.
+            </p>
+            <p class="cn">大道至简 <span class="quote-right">”</span>
+            </p>
+         </div>
          <div class="footer-top">
             <p>
                <strong>Rongxin Zhang</strong> | Bioinformatics Research
@@ -361,38 +340,6 @@
            })
          });
          document.addEventListener('DOMContentLoaded', function() {
-           const captions = ["Talk at the 2nd Yangtze River Delta Bioinformatics Academic Conference", "Online talk at the CAAI Young Scholars Forum on Bioinformatics and AI", "Talk at the 11th Jiangsu Province Bioinformatics Conference"];
-           const slidesContainer = document.querySelector(".carousel-slides");
-           const slides = document.querySelectorAll(".carousel-slide");
-           const prev = document.querySelector(".carousel-prev");
-           const next = document.querySelector(".carousel-next");
-           const captionP = document.querySelector(".carousel-caption p");
-           const dotsC = document.querySelector(".carousel-dots");
-           let current = 0;
-           slides.forEach((_, i) => {
-             const dot = document.createElement("span");
-             dot.className = "carousel-dot" + (i === 0 ? " active" : "");
-             dot.addEventListener("click", () => go(i));
-             dotsC.appendChild(dot);
-           });
-           const dots = document.querySelectorAll(".carousel-dot");
-         
-           function update() {
-             slidesContainer.style.transform = `translateX(${-current*100}%)`;
-             captionP.textContent = captions[current];
-             dots.forEach(d => d.classList.remove("active"));
-             dots[current].classList.add("active");
-           }
-         
-           function go(i) {
-             current = (i + slides.length) % slides.length;
-             update()
-           }
-           prev.addEventListener("click", () => go(current - 1));
-           next.addEventListener("click", () => go(current + 1));
-           setInterval(() => go(current + 1), 5000);
-           update();
-         
            const pinnedContainer = document.getElementById("pinned-news");
             const pinnedItems = document.querySelectorAll(".news-item[data-pinned='true']");
          pinnedItems.forEach(item => {
